@@ -1,0 +1,40 @@
+<view id="wrap" ontouchstart>
+  <swiper class="banner" indicator-dots="true" autoplay="true" interval="3000" duration="500">
+  			<block wx:for="{{banners}}" wx:key="id">
+  				<swiper-item>
+  					<image class="banner_image" src="{{item.img}}"/>
+  				</swiper-item>
+  			</block>
+  		</swiper>
+
+      <view class="audio">
+        <video src="http://www.whxy.edu.cn/__local/5/E2/F1/15E6AAF59602409BDA7F270846A_A248E6C3_285E7EED.mp4?e=.mp4"   controls style="width:100%"></video>
+        <view class="btn-area">
+          <button bindtap="bindButtonTap">武汉学院宣传片</button>
+        </view>
+      </view>
+
+      <view class="schoollist">
+        <block wx:for="{{items}}" wx:key="item">
+          <view class="school-list">
+            <navigator url="/pages/detail/detail?id={{item.id}}">
+              <view class="school-list-info" index="{{index}}">
+                <image class="school-list-photo" src="{{item.imageUrl}}"/>
+                <text class="school-list-desc">{{item.content}}</text>
+              </view>
+            </navigator>
+          </view>
+
+        </block>
+      </view>
+
+      <view class="footer">
+        <!-- <view class="contact">联系方式</view> -->
+        <view>联系单位：武汉学院招生处</view>
+        <view>联系地址：湖北省武汉市黄家湖大道333号</view>
+        <view>邮政编码：430000</view>
+        <view>咨询电话：027-81299999</view>
+      </view>
+
+
+</view>
